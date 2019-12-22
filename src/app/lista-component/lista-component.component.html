@@ -1,0 +1,97 @@
+<mat-tab-group>
+
+    <mat-tab label="Personas" active="true">
+        
+      <div class="centrado"> 
+        <!-- INICIO -->
+        <br>
+        
+        <div class="padre">
+          <div class="hijo">
+            <h6>Personas</h6>
+        <br>
+        <table mat-table [dataSource]="usuarios" class="mat-elevation-z8 centrado">
+
+            <!-- Columna de iconos -->
+            <ng-container matColumnDef="iconos">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element"> 
+                <a routerLink="/perfil/{{element.id}}" routerLinkActive="active"><mat-icon class="margengenerica verde">person</mat-icon></a>
+                
+                <igx-avatar class="margengenerica" initials= {{element.first_name}}
+                  [roundShape]="isCircular" 
+                  size="samll" 
+                  [bgColor]="bgColor" 
+                  [color]="color">
+                </igx-avatar>
+              
+              </td>
+            </ng-container>
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef class="letrablanca"> NOMBRE </th>
+              <td mat-cell *matCellDef="let element"class="letraazul"> {{element.first_name}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="last_name">
+              <th mat-header-cell *matHeaderCellDef class="letrablanca"> APELLIDO </th>
+              <td mat-cell *matCellDef="let element" class="letraazul"> {{element.last_name}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="website">
+              <th mat-header-cell *matHeaderCellDef class="letrablanca"> WEBSITE </th>
+              <td mat-cell *matCellDef="let element" class="letraazul"> {{element.website}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="dob">
+              <th mat-header-cell *matHeaderCellDef class="letrablanca"> DOB </th>
+              <td mat-cell *matCellDef="let element" class="letraazul"> {{element.dob}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef class="letrablanca"> EMAIL </th>
+                <td mat-cell *matCellDef="let element" class="letragris"> <mat-icon class="margengenerica">email</mat-icon> {{element.email}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef class="letrablanca"> ADDRES </th>
+                <td mat-cell *matCellDef="let element" class="letragris"> {{element.address}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef class="letrablanca"> PHONE </th>
+                <td mat-cell *matCellDef="let element" class="letragris"> {{element.phone}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+      </div>
+
+
+
+
+      
+    </mat-tab>
+
+    <mat-tab label="Empresas">
+      <h3>En desarrollo</h3>
+    </mat-tab>
+
+    <mat-tab label="Historial de acceso">
+        <h3>En desarrollo</h3>
+        <div class="padre">
+          <div class="hijo">Centrado vertical y horizontal con FlexBox.</div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+

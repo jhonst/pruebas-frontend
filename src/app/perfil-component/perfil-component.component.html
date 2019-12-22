@@ -1,0 +1,52 @@
+<div class="centrado botonera">
+    
+    <div>
+        <igx-avatar [initials]= inicial
+            [roundShape]="isCircular" 
+            size="large" 
+            [bgColor]="bgColor" 
+            [color]="color">
+        </igx-avatar>
+        <strong> &nbsp;&nbsp;&nbsp; {{perfil['first_name']}} {{perfil['last_name']}}</strong>
+    </div>
+        
+    <div>
+        <button mat-raised-button class="botonesl botonverde"><mat-icon>edit</mat-icon> Editar {{perfil['first_name']}}</button>
+        <button mat-raised-button class="botonesl"><mat-icon>more_vert</mat-icon></button>
+    </div>
+
+    
+</div>
+
+<mat-tab-group class="tapps">
+    <mat-tab label="Detalles">
+        <mat-grid-list cols="3">
+            <mat-grid-tile>
+                
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="anchocompleto">
+                    <div>
+                        <h5>Permisos</h5>
+                        <p><strong>Administrador</strong></p>
+                        <p>¿Es este usuario un administrador? &nbsp;&nbsp;&nbsp;<mat-slide-toggle></mat-slide-toggle></p>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+          </mat-grid-list>
+
+    </mat-tab>
+    <mat-tab label="Eventos">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+    </mat-tab>
+    <mat-tab label="Proyectos">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+    </mat-tab>
+    <mat-tab label="Tareas">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+    </mat-tab>
+</mat-tab-group>
